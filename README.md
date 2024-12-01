@@ -1,1 +1,1 @@
-# -Simple-Store-Simulator-System
+# Simple-Store-Simulator-System
