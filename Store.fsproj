@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+	  <OutputType>WinExe</OutputType>
+	  <TargetFramework>net8.0-windows</TargetFramework>
+	  <UseWindowsForms>true</UseWindowsForms>
+
+    <WarnOn>3390;$(WarnOn)</WarnOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="product.fs" />
+    <Compile Include="cart.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+</Project>
