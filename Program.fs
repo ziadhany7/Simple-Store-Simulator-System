@@ -24,3 +24,15 @@ products |> List.iter (fun p ->
     productList.Items.Add($"{p.Name} - ${p.Price} - {p.Description}") |> ignore
 )
 
+// Add to cart event
+addButton.Click.Add(fun _ -> 
+    if productList.SelectedItem <> null then
+        let selectedName = productList.SelectedItem.ToString().Split(" - ").[0]
+        match findProductByName selectedName with
+        | Some product ->
+            cart <- addToCart product cart
+            cartList.Items.Add($"{product.Name} - ${product.Price}") |> ignore
+        | None -> MessageBox.Show("Product not found!") |> ignore
+    else
+        MessageBox.Show("Please select a product!") |> ignore
+)
