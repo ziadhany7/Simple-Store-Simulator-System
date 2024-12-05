@@ -36,3 +36,14 @@ addButton.Click.Add(fun _ ->
     else
         MessageBox.Show("Please select a product!") |> ignore
 )
+
+
+// Remove from cart event
+removeButton.Click.Add(fun _ -> 
+    if cartList.SelectedItem <> null then
+        let selectedName = cartList.SelectedItem.ToString().Split(" - ").[0]
+        cart <- removeFromCart selectedName cart
+        cartList.Items.Remove(cartList.SelectedItem) |> ignore
+    else
+        MessageBox.Show("Please select an item in the cart to remove!") |> ignore
+)
