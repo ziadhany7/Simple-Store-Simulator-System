@@ -47,3 +47,9 @@ removeButton.Click.Add(fun _ ->
     else
         MessageBox.Show("Please select an item in the cart to remove!") |> ignore
 )
+// Checkout event
+checkoutButton.Click.Add(fun _ -> 
+    let total = calculateTotal cart
+    totalLabel.Text <- sprintf "Total: $%.2f" total
+    MessageBox.Show(sprintf "Your total is $%.2f" total) |> ignore
+)
