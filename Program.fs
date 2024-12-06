@@ -53,3 +53,15 @@ checkoutButton.Click.Add(fun _ ->
     totalLabel.Text <- sprintf "Total: $%.2f" total
     MessageBox.Show(sprintf "Your total is $%.2f" total) |> ignore
 )
+
+// Add controls to form
+form.Controls.Add(productList)
+form.Controls.Add(cartList)
+form.Controls.Add(addButton)
+form.Controls.Add(removeButton)
+form.Controls.Add(checkoutButton)
+form.Controls.Add(totalLabel)
+
+// Run the application
+[<STAThread>]
+do Application.Run(form)
